@@ -1,9 +1,23 @@
 namespace MauiApp0.views;
 
-public partial class ListaProdutos : ContentPage
+public partial class ListaProduto : ContentPage
 {
-	public ListaProdutos()
-	{
-		InitializeComponent();
-	}
+    public ListaProduto()
+    {
+        InitializeComponent();
+
+    }
+
+    private void ToolbarItem_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            Navigation.PushAsync(new views.NovoProduto());
+
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Ops", ex.Message, "OK");
+        }
+    }
 }
